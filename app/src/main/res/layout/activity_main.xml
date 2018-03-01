@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.inkweon7269.dictionary.MainActivity">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/btn_fruit"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="과일"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:background="#CE93D8" />
+
+        <TextView
+            android:id="@+id/btn_vegetable"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="야채"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:background="#AB47BC" />
+
+    </LinearLayout>
+
+    <!--
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/btn_fruit"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="과일"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:background="#8E24AA" />
+
+        <TextView
+            android:id="@+id/btn_vegetable"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="야채"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:background="#6A1B9A" />
+
+    </LinearLayout>
+    -->
+
+</LinearLayout>
