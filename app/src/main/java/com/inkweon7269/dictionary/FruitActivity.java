@@ -11,6 +11,10 @@ import android.widget.TextView;
 import com.inkweon7269.dictionary.mRecyclerView.ListItem;
 import com.inkweon7269.dictionary.mRecyclerView.MyAdapter;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,13 +35,36 @@ public class FruitActivity extends AppCompatActivity {
 
         listItems = new ArrayList<>();
 
-        listItems.add(new ListItem("사과", "사과는 사과나무에서 나는 과일입니다."));
-        listItems.add(new ListItem("배", "배는 배나무에서 나는 과일입니다."));
-        listItems.add(new ListItem("포도", "포도는 포도나무에서 나는 과일입니다."));
-        listItems.add(new ListItem("수박", "수박은 수박나무에서 나는 과일입니다."));
-        listItems.add(new ListItem("귤", "귤은 귤나무에서 나는 과일입니다."));
-        listItems.add(new ListItem("멜론", "멜론은 귤나무에서 나는 과일입니다."));
-        listItems.add(new ListItem("참외", "참외는 참외나무에서 나는 과일입니다."));
+        String json = null;
+
+        try {
+
+            InputStream is = getAssets().open("dictionary.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+
+
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray array = jsonObject.getJSONArray("fruit");
+
+            for(int i = 0; i < array.length(); i++) {
+
+                JSONObject o = array.getJSONObject(i);
+                ListItem item = new ListItem(
+                        o.getString("title"),
+                        o.getString("desc")
+                );
+
+                listItems.add(item);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         adapter = new MyAdapter(listItems, this);
         recyclerView.setAdapter(adapter);
