@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.inkweon7269.dictionary.DetailActivity">
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:background="@android:color/holo_orange_light"/>
+
+    <TextView
+        android:id="@+id/detail_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desc"
+        android:textColor="#ffffff"
+        android:textSize="35sp"
+        android:background="@android:color/holo_orange_light"/>
+
+</LinearLayout>

@@ -5,4 +5,7 @@ package com.inkweon7269.dictionary.mRecyclerView;
  */
 
 public interface ItemClickListener {
+
+    void onItemClick(int position);
+
 }
