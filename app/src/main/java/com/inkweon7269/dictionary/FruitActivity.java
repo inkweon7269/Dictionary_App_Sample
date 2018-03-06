@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -46,7 +47,6 @@ public class FruitActivity extends AppCompatActivity {
             is.close();
             json = new String(buffer, "UTF-8");
 
-
             JSONObject jsonObject = new JSONObject(json);
             JSONArray array = jsonObject.getJSONArray("fruit");
 
@@ -70,4 +70,5 @@ public class FruitActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
     }
+
 }
